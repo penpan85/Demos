@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/background">
+	<LinearLayout 
+		android:id="@+id/linearLayout1"
+		android:orientation="vertical"
+		android:layout_height="615px"
+		android:layout_width="match_parent">
+		<ImageView 
+			android:id="@+id/imageView1" 
+			android:src="@drawable/lizongsheng"
+			android:paddingLeft="20px"
+			android:paddingTop="25px"
+			android:layout_width="460px" 
+			android:layout_height="580px">
+		</ImageView>
+	</LinearLayout>
+
+	<LinearLayout 
+		android:id="@+id/linearLayout3"
+		android:orientation="horizontal"
+		android:layout_height="40px"
+		android:layout_width="match_parent">
+		<SeekBar 
+			android:id="@+id/musicSeekBar"
+			android:progressDrawable="@drawable/seekbar_bg"
+			android:thumb="@drawable/seekbar_thumb"
+			android:minHeight="11px"
+			android:maxHeight="11px"
+			android:paddingLeft="12px"
+			android:paddingRight="12px"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="20px"
+			android:layout_marginTop="10px"
+			android:layout_width="440px">
+		</SeekBar>
+	</LinearLayout>
+	<LinearLayout 
+		android:id="@+id/linearLayout2"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_width="match_parent">
+		<ImageButton 
+			android:id="@+id/imageButtonFavorite" 
+			android:layout_height="100px" 
+			android:layout_width="90px" 			
+			android:background="@drawable/favorite_button">
+		</ImageButton>	
+		<ImageButton 
+			android:layout_height="100px" 
+			android:layout_width="100px" 
+			android:id="@+id/imageButtonPre" 
+			android:background="@drawable/pre_button">
+		</ImageButton>
+		<ImageButton 
+			android:layout_height="100px" 
+			android:layout_width="100px" 
+			android:id="@+id/imageButtonPlay" 
+			android:background="@drawable/play_button">
+		</ImageButton>
+		<ImageButton 
+			android:layout_height="100px" 
+			android:layout_width="100px" 
+			android:id="@+id/imageButtonNext" 
+			android:background="@drawable/next_button">
+		</ImageButton>
+		<ImageButton 
+			android:layout_height="100px" 
+			android:layout_width="90px" 
+			android:id="@+id/imageButtonRepeat" 
+			android:background="@drawable/repeat_off_button">
+		</ImageButton>		
+	</LinearLayout>
+	
+</LinearLayout>
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codepath.example.servicesnotificationsdemo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.codepath.example.servicesnotificationsdemo.activities.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.codepath.example.servicesnotificationsdemo.activities.ImagePreviewActivity"
+            android:exported="true"
+            android:label="@string/title_activity_image_view" >
+        </activity>
+         <activity
+            android:name="com.codepath.example.servicesnotificationsdemo.activities.MusicPlayerActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+         <activity
+            android:name="com.codepath.example.servicesnotificationsdemo.services.ipc.MyIpcTest"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <service android:name=".services.ipc.MPlayService"
+             android:process="com.codepath.example.servicesnotificationsdemo.aidl">
+            <intent-filter>
+                <action android:name="com.codepath.example.servicesnotificationsdemo.services.ipc.playService" />
+            </intent-filter>
+        </service>
+        <service android:name=".services.MusicService"/>
+ <!-- exported="false",代表不允许此服务被跨进程调用 -->
+        <service
+            android:name="com.codepath.example.servicesnotificationsdemo.services.MySimpleService"
+           
+            android:exported="false" />
+        
+        <service
+            android:name="com.codepath.example.servicesnotificationsdemo.services.ImageDownloadService"
+            android:exported="true" />
+        
+   <!--  加了冒号，此receiver运行在自己单独的进程，不加冒号，创建全局进程，不同的应用会共享此进程,也就是说不同的应用启动此service时，如果设定成全局进程，则只创建一个service -->
+        <receiver
+            android:name="com.codepath.example.servicesnotificationsdemo.receivers.MyAlarmReceiver"
+           
+            android:process=":remote" >
+        </receiver>
+    </application>
+
+</manifest>
