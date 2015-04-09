@@ -36,6 +36,7 @@ public class MainActivity extends ActionBarActivity {
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			Log.i(Tag+" onCreate","client activity onServiceConnected:"+android.os.Process.myPid());
 			currService=playService.Stub.asInterface(service);
+			
 			try{
 				currService.play();
 			}catch(Exception e){
@@ -43,6 +44,9 @@ public class MainActivity extends ActionBarActivity {
 			}
 		}
 	};
+	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
